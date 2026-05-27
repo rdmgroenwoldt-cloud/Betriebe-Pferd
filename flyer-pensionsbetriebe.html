@@ -2,9 +2,9 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Aushang · Pferdebesitzer-Salon im Stall — Natürlich Abgesichert</title>
+<title>Aushang · Pferdebesitzer-Abend im Stall — Natürlich Abgesichert</title>
 <style>
-  /* ============ STALL-AUSHANG A4 — One-Pager ============ */
+  /* ============ STALL-AUSHANG A4 — Aushang für Einsteller ============ */
   :root {
     --royal-deep: #0F1132;
     --royal-mid:  #1E2153;
@@ -30,22 +30,19 @@
     line-height: 1.5;
   }
 
-  /* A4 hochkant: 210mm × 297mm */
+  /* A4 hochkant: 210mm × 297mm — funktioniert auch hochskaliert auf A3 */
   .page {
     width: 210mm;
     height: 297mm;
     background:
-      radial-gradient(ellipse at top right, rgba(201,161,78,0.12) 0%, transparent 55%),
-      radial-gradient(ellipse at bottom left, rgba(110,21,46,0.55) 0%, transparent 50%),
+      radial-gradient(ellipse at top right, rgba(201,161,78,0.10) 0%, transparent 55%),
+      radial-gradient(ellipse at bottom left, rgba(110,21,46,0.50) 0%, transparent 50%),
       linear-gradient(160deg, var(--royal-deep) 0%, var(--wine-deep) 65%, var(--royal-mid) 100%);
     margin: 12mm auto;
     box-shadow: 0 4px 24px rgba(0,0,0,0.18);
     position: relative;
     overflow: hidden;
-    padding: 0;
   }
-
-  /* Gold-Wein-Topline */
   .page::before {
     content: '';
     position: absolute;
@@ -54,7 +51,6 @@
     background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--wine-bright) 50%, var(--gold) 70%, transparent 100%);
     z-index: 5;
   }
-  /* Gold-Bottomline */
   .page::after {
     content: '';
     position: absolute;
@@ -66,171 +62,183 @@
 
   /* === HEADER === */
   .header {
-    padding: 14mm 18mm 6mm;
+    padding: 13mm 18mm 4mm;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10mm;
   }
   .header .logo {
-    height: 16mm;
+    height: 15mm;
     width: auto;
     filter: brightness(0) invert(1);
     opacity: 0.95;
   }
-  .header .right-tag {
-    text-align: right;
-    line-height: 1.3;
-  }
-  .header .right-tag .micro {
+  .header .micro {
     display: inline-block;
     color: var(--gold-bright);
-    font-size: 9pt;
+    font-size: 8.5pt;
     letter-spacing: 2.5pt;
     text-transform: uppercase;
-    background: rgba(212,184,124,0.12);
+    background: rgba(212,184,124,0.10);
     border: 1px solid rgba(212,184,124,0.40);
     border-radius: 100pt;
     padding: 2.5pt 12pt;
     font-weight: bold;
   }
 
-  /* === KERN-AUFSCHLAG === */
-  .core {
-    padding: 8mm 18mm 4mm;
-    position: relative;
-    z-index: 2;
+  /* === AUFSCHLAG === */
+  .hero {
+    padding: 6mm 18mm 4mm;
   }
-  .core .eyebrow {
-    display: block;
+  .hero .eyebrow {
     color: var(--gold-soft);
     text-transform: uppercase;
-    letter-spacing: 4pt;
+    letter-spacing: 3.5pt;
     font-size: 10pt;
     font-weight: bold;
-    margin-bottom: 6mm;
+    margin-bottom: 5mm;
+    display: block;
   }
-  .core .eyebrow::before {
+  .hero .eyebrow::before {
     content: '— ';
     color: var(--gold);
   }
-  .core h1 {
-    font-size: 38pt;
-    line-height: 1.05;
+  .hero h1 {
+    font-size: 30pt;
+    line-height: 1.1;
     font-weight: normal;
     letter-spacing: -0.5pt;
     margin-bottom: 6mm;
     color: var(--cream);
   }
-  .core h1 em {
+  .hero h1 em {
     color: var(--gold-soft);
     font-style: italic;
-    display: block;
   }
-  .core .sub {
-    font-size: 13pt;
+  .hero .lead {
+    font-size: 12pt;
     line-height: 1.55;
     color: rgba(250,247,240,0.92);
-    max-width: 165mm;
+    max-width: 170mm;
   }
-  .core .sub strong {
+  .hero .lead strong {
     color: var(--gold-bright);
     font-weight: normal;
   }
 
-  /* === DREI BULLETS === */
-  .reasons {
-    padding: 6mm 18mm;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5mm;
-  }
-  .reasons .item {
-    background: rgba(250,247,240,0.06);
+  /* === WORÜBER REDEN WIR === */
+  .topics {
+    margin: 8mm 18mm 6mm;
+    padding: 7mm 8mm;
+    background: rgba(250,247,240,0.05);
     border: 1px solid rgba(212,184,124,0.30);
     border-radius: 3pt;
-    padding: 6mm 5mm;
-    text-align: center;
   }
-  .reasons .item .icon {
-    width: 13mm; height: 13mm;
+  .topics .label {
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 2.5pt;
+    font-size: 9pt;
+    font-weight: bold;
+    margin-bottom: 4mm;
+    display: block;
+  }
+  .topics ul {
+    list-style: none;
+    padding: 0;
+  }
+  .topics li {
+    display: flex;
+    gap: 4mm;
+    margin-bottom: 3.5mm;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+  .topics li:last-child { margin-bottom: 0; }
+  .topics li .marker {
+    flex-shrink: 0;
+    width: 7mm; height: 7mm;
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
     color: var(--royal-deep);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 3.5mm;
-    font-size: 16pt;
-    font-weight: bold;
     font-style: italic;
+    font-size: 9pt;
+    font-weight: bold;
+    margin-top: 0.5mm;
   }
-  .reasons .item h3 {
-    font-size: 11pt;
+  .topics li .txt {
+    font-size: 10.5pt;
+    color: var(--cream);
+  }
+  .topics li .txt strong {
     color: var(--gold-bright);
     font-weight: normal;
-    line-height: 1.3;
-    margin-bottom: 2.5mm;
-  }
-  .reasons .item p {
-    font-size: 9.5pt;
-    color: rgba(250,247,240,0.85);
-    line-height: 1.5;
+    display: block;
+    margin-bottom: 0.5mm;
   }
 
-  /* === EVENT-INFOS === */
-  .event {
-    margin: 8mm 18mm 5mm;
-    padding: 8mm 9mm;
-    background: linear-gradient(135deg, rgba(201,161,78,0.15) 0%, rgba(110,21,46,0.30) 100%);
-    border: 1.5pt solid var(--gold);
-    border-radius: 4pt;
+  /* === KOSTENFREI-BAND === */
+  .free-strip {
+    margin: 0 18mm 6mm;
+    padding: 5mm 7mm;
+    background: linear-gradient(135deg, rgba(201,161,78,0.18) 0%, rgba(110,21,46,0.30) 100%);
+    border-left: 3pt solid var(--gold);
+    border-radius: 2pt;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: var(--cream);
+  }
+  .free-strip strong {
+    color: var(--gold-bright);
+    font-weight: normal;
+  }
+
+  /* === WER WIR SIND === */
+  .about {
+    margin: 0 18mm 6mm;
+    padding: 6mm 8mm;
+    background: rgba(250,247,240,0.04);
+    border-radius: 3pt;
+    border: 1px solid rgba(212,184,124,0.20);
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 22mm 1fr;
     gap: 6mm;
     align-items: center;
   }
-  .event .left h2 {
-    font-size: 14pt;
+  .about .portrait {
+    width: 22mm; height: 22mm;
+    border-radius: 50%;
+    background-image: url('https://natuerlichabgesichert.de/wp-content/uploads/2025/10/pferd-mit-frauen-300x240.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 1.5pt solid var(--gold-soft);
+  }
+  .about .text h3 {
+    font-size: 11pt;
+    color: var(--gold-bright);
+    font-weight: normal;
+    margin-bottom: 1.5mm;
+  }
+  .about .text h3 em {
+    color: var(--gold-soft);
+    font-style: italic;
+  }
+  .about .text p {
+    font-size: 9.5pt;
+    color: rgba(250,247,240,0.88);
+    line-height: 1.5;
+  }
+  .about .text p strong {
     color: var(--cream);
     font-weight: normal;
-    margin-bottom: 4mm;
-    line-height: 1.25;
-  }
-  .event .left h2 em {
-    color: var(--gold-bright);
-    font-style: italic;
-  }
-  .event .details dl {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1.5mm 4mm;
-    font-size: 10pt;
-    line-height: 1.4;
-  }
-  .event .details dt {
-    color: var(--gold-soft);
-    text-transform: uppercase;
-    letter-spacing: 1pt;
-    font-size: 8.5pt;
-    font-weight: bold;
-    padding-top: 0.5mm;
-  }
-  .event .details dd {
-    color: var(--cream);
-    font-size: 11pt;
-  }
-  .event .details dd .placeholder {
-    display: inline-block;
-    min-width: 28mm;
-    border-bottom: 1pt dashed var(--gold-soft);
-    color: var(--gold-soft);
-    font-style: italic;
-    padding-bottom: 0.5mm;
   }
 
-  /* === ANMELDEN-STRIP === */
-  .signup {
+  /* === CTA / ANMELDEN === */
+  .cta {
     margin: 0 18mm 5mm;
     padding: 7mm 8mm;
     background: var(--ivory);
@@ -241,28 +249,32 @@
     gap: 6mm;
     align-items: center;
   }
-  .signup .text h3 {
-    font-size: 13pt;
+  .cta .text h3 {
+    font-size: 14pt;
     color: var(--royal-deep);
     font-weight: normal;
-    margin-bottom: 2mm;
-    line-height: 1.25;
+    margin-bottom: 2.5mm;
+    line-height: 1.2;
   }
-  .signup .text h3 em {
+  .cta .text h3 em {
     color: var(--wine-bright);
     font-style: italic;
   }
-  .signup .text p {
-    font-size: 9.5pt;
+  .cta .text p {
+    font-size: 10pt;
     color: var(--text-muted);
     line-height: 1.5;
+    margin-bottom: 2mm;
   }
-  .signup .text .accent {
-    color: var(--wine-deep);
+  .cta .text p:last-child { margin-bottom: 0; }
+  .cta .text .option {
+    color: var(--royal-deep);
     font-weight: bold;
-    letter-spacing: 0.5pt;
   }
-  .signup .qr {
+  .cta .text .option .accent {
+    color: var(--wine-deep);
+  }
+  .cta .qr {
     width: 28mm;
     height: 28mm;
     background: var(--cream-warm);
@@ -274,7 +286,7 @@
     text-align: center;
     font-size: 7.5pt;
     color: var(--text-muted);
-    line-height: 1.35;
+    line-height: 1.4;
     padding: 3mm;
     font-style: italic;
   }
@@ -282,64 +294,54 @@
   /* === STALL-COBRANDING === */
   .cobranding {
     margin: 0 18mm 5mm;
-    padding: 5mm 7mm;
+    padding: 4mm 7mm;
     background: rgba(250,247,240,0.05);
     border-left: 3pt solid var(--gold);
     border-radius: 2pt;
-    font-size: 10pt;
-    line-height: 1.5;
   }
   .cobranding .label {
     color: var(--gold-soft);
     text-transform: uppercase;
-    letter-spacing: 1.5pt;
-    font-size: 8.5pt;
+    letter-spacing: 2pt;
+    font-size: 8pt;
     font-weight: bold;
-    display: block;
-    margin-bottom: 2mm;
+    margin-right: 3mm;
   }
   .cobranding .stallname {
     color: var(--cream);
-    font-size: 13pt;
-    border-bottom: 1pt dashed var(--gold-soft);
-    padding-bottom: 1mm;
-    display: inline-block;
-    min-width: 100mm;
+    font-size: 12pt;
     font-style: italic;
-  }
-  .cobranding .stallname.filled {
-    border-bottom: 1pt solid var(--gold);
-    color: var(--gold-bright);
-    font-style: normal;
+    border-bottom: 1pt dashed var(--gold-soft);
+    padding: 0 1mm 0.5mm;
+    display: inline-block;
+    min-width: 90mm;
   }
 
   /* === FOOTER === */
   .footer {
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    padding: 6mm 18mm 7mm;
-    border-top: 1px solid rgba(212,184,124,0.30);
+    padding: 5mm 18mm 7mm;
+    border-top: 1px solid rgba(212,184,124,0.25);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8mm;
-    font-size: 9.5pt;
+    gap: 6mm;
+    font-size: 9pt;
     color: rgba(250,247,240,0.75);
   }
   .footer .left {
     line-height: 1.55;
-    font-size: 8.5pt;
   }
   .footer .left .brand {
     color: var(--gold-bright);
     font-weight: bold;
     letter-spacing: 0.5pt;
-    font-size: 9.5pt;
+    font-size: 10pt;
   }
   .footer .right {
     text-align: right;
-    line-height: 1.55;
-    font-size: 9.5pt;
+    line-height: 1.5;
   }
   .footer .right .url {
     color: var(--gold-bright);
@@ -350,16 +352,9 @@
 
   /* === PRINT === */
   @media print {
-    @page {
-      size: A4 portrait;
-      margin: 0;
-    }
+    @page { size: A4 portrait; margin: 0; }
     html, body { background: white; }
-    .page {
-      margin: 0;
-      box-shadow: none;
-      page-break-after: auto;
-    }
+    .page { margin: 0; box-shadow: none; }
     .no-print { display: none !important; }
   }
 
@@ -380,82 +375,86 @@
 
 <div class="screen-hint no-print">
   <strong>Stall-Aushang · 1 Seite A4</strong> — über den Browser drucken (Strg + P) oder als PDF speichern.<br>
-  Im Druck-Dialog: <em>„Hintergrundgrafiken drucken"</em> aktivieren damit Farben mitkommen.
+  Im Druck-Dialog: <em>„Hintergrundgrafiken drucken"</em> aktivieren, damit Farben mitkommen.<br>
+  Für A3-Aushang: im Druck-Dialog Skalierung auf „141%" stellen.
 </div>
 
-<!-- ============ AUSHANG ============ -->
 <div class="page">
 
   <div class="header">
     <img src="https://natuerlichabgesichert.de/wp-content/uploads/2022/04/Logo-5.svg"
          alt="Natürlich Abgesichert"
          class="logo">
-    <div class="right-tag">
-      <span class="micro">Salon im Stall</span>
-    </div>
+    <span class="micro">Pferdebesitzer-Abend im Stall</span>
   </div>
 
-  <div class="core">
+  <div class="hero">
     <span class="eyebrow">Liebe Pferdebesitzer</span>
-    <h1>
-      Klinikrechnung über 8 000 € —
-      <em>was zahlt Eure Versicherung wirklich?</em>
-    </h1>
-    <p class="sub">
-      Bauchhöhlen-OP, Augen-OP, Sehnen-OP — eine fünfstellige Klinikrechnung kann jedes Pferd treffen.
-      Unser <strong>Salon-Abend bei Euch im Stall</strong> klärt in 90 Minuten, was Euer aktueller
-      Vertrag wirklich kann — und wo es teuer wird.
+    <h1>Damit eine Klinikrechnung <em>nicht zur Stallkrise wird.</em></h1>
+    <p class="lead">
+      Wir kommen virtuell zu Euch in den Stall und verbringen <strong>einen Abend mit Euch</strong> —
+      um Licht ins Dunkel zu bringen, wenn es um Pferde-OP-Versicherung,
+      Klinikrechnungen und das Kleingedruckte geht.
     </p>
   </div>
 
-  <div class="reasons">
-    <div class="item">
-      <div class="icon">I</div>
-      <h3>Klinikrechnung 2026 ist fünfstellig</h3>
-      <p>GOT-Reform 2022 plus Material- und Medikamenten-Inflation: jede OP heute 30–60 % teurer als 2019.</p>
-    </div>
-    <div class="item">
-      <div class="icon">II</div>
-      <h3>Das Kleingedruckte</h3>
-      <p>Welche Eingriffe sind heimlich ausgeschlossen? Welche Wartezeiten greifen — wenn's drauf ankommt?</p>
-    </div>
-    <div class="item">
-      <div class="icon">III</div>
-      <h3>Auch Euer eigener Schutz</h3>
-      <p>Reiter-Unfall, Rechtsschutz, Berufsunfähigkeit — einzeln nötig oder smarter im Bündel?</p>
-    </div>
+  <div class="topics">
+    <span class="label">Worüber wir an dem Abend reden</span>
+    <ul>
+      <li>
+        <span class="marker">I</span>
+        <span class="txt">
+          <strong>Warum eine Klinikrechnung 2026 fünfstellig ist</strong>
+          GOT-Reform 2022 plus stille Material- und Medikamenten-Inflation — jede OP kostet 30–60 % mehr als vor 4 Jahren.
+        </span>
+      </li>
+      <li>
+        <span class="marker">II</span>
+        <span class="txt">
+          <strong>Das Kleingedruckte und seine Tücken</strong>
+          Welche Eingriffe sind heimlich ausgeschlossen, welche Wartezeiten greifen wirklich — und woran erkennt Ihr in 30 Sekunden, was Euer Vertrag taugt?
+        </span>
+      </li>
+      <li>
+        <span class="marker">III</span>
+        <span class="txt">
+          <strong>Und Euer eigener Schutz?</strong>
+          Reiter-Unfall, Reiter-Rechtsschutz, Berufsunfähigkeit — einzeln nötig, oder gibt es smartere Bündel-Lösungen?
+        </span>
+      </li>
+    </ul>
   </div>
 
-  <div class="event">
-    <div class="left">
-      <h2>Salon-Abend <em>in unserem Stall.</em><br>Online · 90 Minuten · im Dialog.</h2>
-    </div>
-    <div class="details">
-      <dl>
-        <dt>Datum</dt><dd><span class="placeholder">tt . mm . jjjj</span></dd>
-        <dt>Uhrzeit</dt><dd><span class="placeholder">__ : __ Uhr</span></dd>
-        <dt>Format</dt><dd>Zoom — von zuhause oder gemeinsam im Stall</dd>
-        <dt>Kosten</dt><dd>Keine — für alle Beteiligten</dd>
-      </dl>
-    </div>
+  <div class="free-strip">
+    <strong>Kostenfrei für alle.</strong> Kein Verkaufsgespräch, keine Pflicht. Wir suchen einfach das Gespräch und klären auf —
+    persönlich, sachlich, ehrlich. Wer mag, kann danach einen kostenfreien Vertragscheck machen lassen. Niemand muss.
   </div>
 
-  <div class="signup">
+  <div class="about">
+    <div class="portrait"></div>
     <div class="text">
-      <h3>Jetzt <em>anmelden</em> — Platz reservieren</h3>
+      <h3>Otto Boldt <em>und Team</em> — Natürlich Abgesichert</h3>
       <p>
-        <span class="accent">QR-Code scannen</span> oder beim Stall melden.
-        Ein offener Dialog, keine Verkaufsveranstaltung.
-        Wer mag, lässt nach dem Abend einen kostenfreien Vertragscheck machen — niemand muss.
+        Wir sind <strong>selbst Pferde- und Tierbesitzer</strong>, haben gezüchtet und jahrelang
+        in Pensionsställen und Pferdekliniken gearbeitet. Praxis-Wissen aus dem
+        Stallalltag — nicht aus dem Versicherungs-Lehrbuch.
       </p>
     </div>
+  </div>
+
+  <div class="cta">
+    <div class="text">
+      <h3>Jetzt <em>anmelden</em> oder Beratungstermin buchen</h3>
+      <p><span class="option">→ <span class="accent">Zum Salon-Abend anmelden</span></span> — QR-Code scannen oder beim Stall melden.</p>
+      <p><span class="option">→ <span class="accent">Lieber direkt 1:1?</span></span> Persönlichen Beratungstermin gleich online buchen.</p>
+    </div>
     <div class="qr">
-      QR-Code hier<br>einkleben<br>→ Anmelde-Seite
+      QR-Code hier<br>einkleben<br>→ Anmeldung &amp;<br>Terminbuchung
     </div>
   </div>
 
   <div class="cobranding">
-    <span class="label">Euer Stall</span>
+    <span class="label">Veranstaltet mit Eurem Stall:</span>
     <span class="stallname">— hier Stallname eintragen —</span>
   </div>
 
