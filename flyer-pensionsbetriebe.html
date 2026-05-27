@@ -261,38 +261,39 @@
   .cta .dual {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5mm;
+    gap: 6mm;
     align-items: stretch;
   }
   .cta .opt {
-    display: grid;
-    grid-template-columns: 30mm 1fr;
-    gap: 4mm;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 3mm 3mm 3mm 0;
+    text-align: center;
+    gap: 3mm;
+    padding: 3mm 0;
   }
   .cta .opt + .opt {
-    border-left: 1px solid rgba(15,17,50,0.10);
-    padding-left: 5mm;
+    border-left: 1px solid rgba(15,17,50,0.12);
+    padding-left: 4mm;
   }
   .cta .opt .qr {
-    width: 30mm;
-    height: 30mm;
+    width: 45mm;
+    height: 45mm;
     background: var(--cream-warm);
-    border: 1.5pt dashed var(--gold-deep);
-    border-radius: 2pt;
+    border: 2pt dashed var(--gold-deep);
+    border-radius: 3pt;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 7.5pt;
+    font-size: 8.5pt;
     color: var(--text-muted);
-    line-height: 1.35;
-    padding: 2mm;
+    line-height: 1.4;
+    padding: 3mm;
     font-style: italic;
   }
   .cta .opt .text h4 {
-    font-size: 10.5pt;
+    font-size: 12pt;
     color: var(--royal-deep);
     font-weight: bold;
     margin-bottom: 1mm;
@@ -302,7 +303,7 @@
     color: var(--wine-deep);
   }
   .cta .opt .text p {
-    font-size: 8.5pt;
+    font-size: 9.5pt;
     color: var(--text-muted);
     line-height: 1.4;
   }
