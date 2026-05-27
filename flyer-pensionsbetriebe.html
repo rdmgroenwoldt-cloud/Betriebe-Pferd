@@ -2,9 +2,9 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Flyer · Pferdebesitzer-Salon für Pensionsbetriebe — Natürlich Abgesichert</title>
+<title>Aushang · Pferdebesitzer-Salon im Stall — Natürlich Abgesichert</title>
 <style>
-  /* ============ DRUCK-FLYER A4 — Royal · Wein · Gold ============ */
+  /* ============ STALL-AUSHANG A4 — One-Pager ============ */
   :root {
     --royal-deep: #0F1132;
     --royal-mid:  #1E2153;
@@ -25,430 +25,330 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
     font-family: Georgia, 'Times New Roman', serif;
-    color: var(--text-dark);
+    color: var(--cream);
     background: #d4d4d4;
     line-height: 1.5;
   }
 
-  /* Seitenraster — A4 hochkant: 210mm × 297mm */
+  /* A4 hochkant: 210mm × 297mm */
   .page {
     width: 210mm;
     height: 297mm;
-    background: var(--ivory);
+    background:
+      radial-gradient(ellipse at top right, rgba(201,161,78,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at bottom left, rgba(110,21,46,0.55) 0%, transparent 50%),
+      linear-gradient(160deg, var(--royal-deep) 0%, var(--wine-deep) 65%, var(--royal-mid) 100%);
     margin: 12mm auto;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
     position: relative;
     overflow: hidden;
     padding: 0;
   }
 
-  /* SEITE 1 — Front */
-  .page-1 {
-    background:
-      radial-gradient(ellipse at top right, rgba(201,161,78,0.10) 0%, transparent 55%),
-      linear-gradient(135deg, var(--royal-deep) 0%, var(--wine-deep) 60%, var(--royal-mid) 100%);
-    color: var(--cream);
-  }
-  .page-1::before {
+  /* Gold-Wein-Topline */
+  .page::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--wine-bright) 50%, var(--gold) 60%, transparent 100%);
-    z-index: 3;
+    height: 7px;
+    background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--wine-bright) 50%, var(--gold) 70%, transparent 100%);
+    z-index: 5;
   }
-  .page-1::after {
+  /* Gold-Bottomline */
+  .page::after {
     content: '';
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    height: 4px;
+    height: 5px;
     background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
-    z-index: 3;
+    z-index: 5;
   }
 
-  .header-1 {
-    padding: 14mm 16mm 10mm;
+  /* === HEADER === */
+  .header {
+    padding: 14mm 18mm 6mm;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 14mm;
+    gap: 10mm;
   }
-  .header-1 .logo {
+  .header .logo {
     height: 16mm;
     width: auto;
     filter: brightness(0) invert(1);
     opacity: 0.95;
   }
-  .header-1 .tag {
-    font-size: 9pt;
-    letter-spacing: 2.5pt;
-    color: var(--gold-soft);
-    text-transform: uppercase;
+  .header .right-tag {
     text-align: right;
     line-height: 1.3;
   }
-
-  .hero-1 {
-    padding: 6mm 16mm 12mm;
-    position: relative;
-    z-index: 2;
-  }
-  .hero-1 .pill {
+  .header .right-tag .micro {
     display: inline-block;
-    background: rgba(212,184,124,0.12);
-    border: 1px solid rgba(212,184,124,0.4);
     color: var(--gold-bright);
-    padding: 3pt 14pt;
-    border-radius: 100pt;
     font-size: 9pt;
-    letter-spacing: 1.5pt;
+    letter-spacing: 2.5pt;
     text-transform: uppercase;
-    margin-bottom: 10mm;
+    background: rgba(212,184,124,0.12);
+    border: 1px solid rgba(212,184,124,0.40);
+    border-radius: 100pt;
+    padding: 2.5pt 12pt;
     font-weight: bold;
   }
-  .hero-1 h1 {
-    font-size: 32pt;
-    line-height: 1.1;
-    font-weight: normal;
-    letter-spacing: -0.5pt;
-    margin-bottom: 8mm;
-    color: var(--cream);
-  }
-  .hero-1 h1 em {
-    color: var(--gold-soft);
-    font-style: italic;
-  }
-  .hero-1 .lead {
-    font-size: 13pt;
-    line-height: 1.5;
-    color: rgba(250,247,240,0.92);
-    max-width: 160mm;
-    margin-bottom: 10mm;
-  }
-  .hero-1 .lead strong {
-    color: var(--gold-bright);
-    font-weight: normal;
-  }
 
-  .meta-strip {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 6mm;
-    margin: 0 16mm;
-    padding: 8mm 9mm;
-    background: rgba(250,247,240,0.05);
-    border: 1px solid rgba(212,184,124,0.30);
-    border-radius: 3pt;
+  /* === KERN-AUFSCHLAG === */
+  .core {
+    padding: 8mm 18mm 4mm;
     position: relative;
     z-index: 2;
   }
-  .meta-strip .item .label {
+  .core .eyebrow {
     display: block;
-    font-size: 8pt;
-    letter-spacing: 2pt;
     color: var(--gold-soft);
     text-transform: uppercase;
+    letter-spacing: 4pt;
+    font-size: 10pt;
     font-weight: bold;
-    margin-bottom: 1.5mm;
-  }
-  .meta-strip .item .val {
-    font-size: 11pt;
-    color: var(--cream);
-  }
-
-  .three-bullets {
-    margin: 12mm 16mm 0;
-    color: var(--cream);
-  }
-  .three-bullets .row {
-    display: flex;
-    gap: 4mm;
-    align-items: flex-start;
     margin-bottom: 6mm;
   }
-  .three-bullets .num {
-    flex-shrink: 0;
-    width: 9mm; height: 9mm;
+  .core .eyebrow::before {
+    content: '— ';
+    color: var(--gold);
+  }
+  .core h1 {
+    font-size: 38pt;
+    line-height: 1.05;
+    font-weight: normal;
+    letter-spacing: -0.5pt;
+    margin-bottom: 6mm;
+    color: var(--cream);
+  }
+  .core h1 em {
+    color: var(--gold-soft);
+    font-style: italic;
+    display: block;
+  }
+  .core .sub {
+    font-size: 13pt;
+    line-height: 1.55;
+    color: rgba(250,247,240,0.92);
+    max-width: 165mm;
+  }
+  .core .sub strong {
+    color: var(--gold-bright);
+    font-weight: normal;
+  }
+
+  /* === DREI BULLETS === */
+  .reasons {
+    padding: 6mm 18mm;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5mm;
+  }
+  .reasons .item {
+    background: rgba(250,247,240,0.06);
+    border: 1px solid rgba(212,184,124,0.30);
+    border-radius: 3pt;
+    padding: 6mm 5mm;
+    text-align: center;
+  }
+  .reasons .item .icon {
+    width: 13mm; height: 13mm;
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
     color: var(--royal-deep);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-style: italic;
-    font-size: 12pt;
+    margin: 0 auto 3.5mm;
+    font-size: 16pt;
     font-weight: bold;
+    font-style: italic;
   }
-  .three-bullets .text {
-    flex: 1;
+  .reasons .item h3 {
     font-size: 11pt;
+    color: var(--gold-bright);
+    font-weight: normal;
+    line-height: 1.3;
+    margin-bottom: 2.5mm;
+  }
+  .reasons .item p {
+    font-size: 9.5pt;
+    color: rgba(250,247,240,0.85);
     line-height: 1.5;
   }
-  .three-bullets .text strong {
-    color: var(--gold-bright);
-    font-weight: normal;
-    display: block;
-    margin-bottom: 1mm;
-    font-size: 11.5pt;
-  }
 
-  .footer-1 {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 10mm 16mm 12mm;
-    border-top: 1px solid rgba(212,184,124,0.25);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8mm;
-    font-size: 9.5pt;
-    color: rgba(250,247,240,0.78);
-  }
-  .footer-1 .cta-block {
-    text-align: right;
-  }
-  .footer-1 .cta-block .url {
-    color: var(--gold-bright);
-    font-size: 11pt;
-    font-weight: bold;
-    letter-spacing: 0.5pt;
-    margin-bottom: 1mm;
-  }
-  .footer-1 .cta-block .phone {
-    font-size: 10pt;
-    color: var(--cream);
-  }
-  .footer-1 .qr-hint {
-    font-size: 9pt;
-    font-style: italic;
-    color: var(--gold-soft);
-  }
-
-  /* SEITE 2 — Back */
-  .page-2 {
-    background: var(--ivory);
-    color: var(--text-dark);
-  }
-  .page-2::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, transparent 0%, var(--wine-bright) 30%, var(--gold) 50%, var(--wine-bright) 70%, transparent 100%);
-  }
-
-  .header-2 {
-    padding: 12mm 16mm 6mm;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(15,17,50,0.10);
-    margin-bottom: 8mm;
-  }
-  .header-2 .eyebrow {
-    color: var(--wine-bright);
-    text-transform: uppercase;
-    letter-spacing: 2.5pt;
-    font-size: 9pt;
-    font-weight: bold;
-  }
-  .header-2 h2 {
-    font-size: 18pt;
-    line-height: 1.2;
-    font-weight: normal;
-    color: var(--royal-deep);
-    margin-top: 1.5mm;
-  }
-  .header-2 h2 em {
-    color: var(--wine-bright);
-    font-style: italic;
-  }
-
-  .steps {
-    margin: 0 16mm 10mm;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5mm;
-  }
-  .steps .step {
-    background: var(--cream-warm);
-    border-top: 2.5pt solid var(--gold);
-    padding: 7mm 5mm 6mm;
-    border-radius: 2pt;
-  }
-  .steps .step .n {
-    font-size: 22pt;
-    font-style: italic;
-    color: var(--gold-deep);
-    line-height: 1;
-    margin-bottom: 3mm;
-    font-weight: bold;
-  }
-  .steps .step h3 {
-    font-size: 11pt;
-    color: var(--royal-deep);
-    font-weight: normal;
-    margin-bottom: 2.5mm;
-    line-height: 1.25;
-  }
-  .steps .step p {
-    font-size: 9pt;
-    color: var(--text-muted);
-    line-height: 1.45;
-  }
-
-  .value-row {
-    margin: 0 16mm 8mm;
+  /* === EVENT-INFOS === */
+  .event {
+    margin: 8mm 18mm 5mm;
+    padding: 8mm 9mm;
+    background: linear-gradient(135deg, rgba(201,161,78,0.15) 0%, rgba(110,21,46,0.30) 100%);
+    border: 1.5pt solid var(--gold);
+    border-radius: 4pt;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6mm;
-  }
-  .value-row .card {
-    background: linear-gradient(135deg, var(--royal-deep) 0%, var(--wine-deep) 100%);
-    color: var(--cream);
-    padding: 8mm 7mm 9mm;
-    border-radius: 3pt;
-    position: relative;
-    overflow: hidden;
-  }
-  .value-row .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2.5pt;
-    background: var(--gold);
-  }
-  .value-row .card h3 {
-    font-size: 13pt;
-    color: var(--cream);
-    margin-bottom: 4mm;
-    font-weight: normal;
-  }
-  .value-row .card h3 em {
-    color: var(--gold-soft);
-    font-style: italic;
-  }
-  .value-row .card p {
-    font-size: 9.5pt;
-    line-height: 1.55;
-    color: rgba(250,247,240,0.92);
-    margin-bottom: 2.5mm;
-  }
-  .value-row .card strong {
-    color: var(--gold-bright);
-    font-weight: normal;
-  }
-
-  .provision {
-    margin: 0 16mm 8mm;
-    padding: 7mm 8mm;
-    background: var(--cream-warm);
-    border-left: 4pt solid var(--gold);
-    border-radius: 2pt;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 6mm;
   }
-  .provision .left .label {
-    font-size: 9pt;
-    letter-spacing: 2pt;
-    text-transform: uppercase;
-    color: var(--wine-bright);
-    font-weight: bold;
-    margin-bottom: 1.5mm;
-  }
-  .provision .left h3 {
-    font-size: 16pt;
-    color: var(--royal-deep);
-    font-weight: normal;
-    line-height: 1.15;
-  }
-  .provision .left h3 em {
-    color: var(--gold-deep);
-    font-style: italic;
-  }
-  .provision .right {
+  .event .left h2 {
     font-size: 14pt;
-    color: var(--gold-deep);
-    font-weight: bold;
-    white-space: nowrap;
-  }
-
-  .otto-section {
-    margin: 0 16mm 10mm;
-    padding: 8mm;
-    background: linear-gradient(135deg, var(--cream-warm) 0%, var(--ivory) 100%);
-    border: 1px solid rgba(15,17,50,0.08);
-    border-radius: 2pt;
-    display: grid;
-    grid-template-columns: 28mm 1fr;
-    gap: 7mm;
-    align-items: center;
-  }
-  .otto-section .portrait {
-    width: 28mm; height: 28mm;
-    border-radius: 50%;
-    background-image: url('https://natuerlichabgesichert.de/wp-content/uploads/2025/10/pferd-mit-frauen-300x240.jpg');
-    background-size: cover;
-    background-position: center;
-    border: 2pt solid var(--gold);
-  }
-  .otto-section .text h3 {
-    font-size: 12pt;
-    color: var(--royal-deep);
+    color: var(--cream);
     font-weight: normal;
-    margin-bottom: 2.5mm;
+    margin-bottom: 4mm;
+    line-height: 1.25;
   }
-  .otto-section .text h3 em {
-    color: var(--wine-bright);
+  .event .left h2 em {
+    color: var(--gold-bright);
     font-style: italic;
   }
-  .otto-section .text p {
-    font-size: 9.5pt;
-    color: var(--text-dark);
-    line-height: 1.55;
-  }
-
-  .footer-2 {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 8mm 16mm 10mm;
-    background: var(--royal-deep);
-    color: rgba(250,247,240,0.85);
+  .event .details dl {
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 8mm;
-    font-size: 9pt;
-  }
-  .footer-2 .col h4 {
-    color: var(--gold-soft);
-    font-size: 8.5pt;
-    letter-spacing: 2pt;
-    text-transform: uppercase;
-    margin-bottom: 2.5mm;
-    font-weight: bold;
-  }
-  .footer-2 .col p,
-  .footer-2 .col .line {
-    font-size: 8.5pt;
-    line-height: 1.5;
-    color: rgba(250,247,240,0.82);
-  }
-  .footer-2 .col .highlight {
-    color: var(--gold-bright);
-  }
-  .footer-2 .compliance {
-    grid-column: 1 / -1;
-    border-top: 1px solid rgba(212,184,124,0.20);
-    padding-top: 3.5mm;
-    margin-top: 1mm;
-    font-size: 7.5pt;
-    color: rgba(250,247,240,0.55);
+    grid-template-columns: auto 1fr;
+    gap: 1.5mm 4mm;
+    font-size: 10pt;
     line-height: 1.4;
   }
+  .event .details dt {
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+    font-size: 8.5pt;
+    font-weight: bold;
+    padding-top: 0.5mm;
+  }
+  .event .details dd {
+    color: var(--cream);
+    font-size: 11pt;
+  }
+  .event .details dd .placeholder {
+    display: inline-block;
+    min-width: 28mm;
+    border-bottom: 1pt dashed var(--gold-soft);
+    color: var(--gold-soft);
+    font-style: italic;
+    padding-bottom: 0.5mm;
+  }
 
-  /* ============ PRINT ============ */
+  /* === ANMELDEN-STRIP === */
+  .signup {
+    margin: 0 18mm 5mm;
+    padding: 7mm 8mm;
+    background: var(--ivory);
+    border-radius: 3pt;
+    color: var(--text-dark);
+    display: grid;
+    grid-template-columns: 1fr 28mm;
+    gap: 6mm;
+    align-items: center;
+  }
+  .signup .text h3 {
+    font-size: 13pt;
+    color: var(--royal-deep);
+    font-weight: normal;
+    margin-bottom: 2mm;
+    line-height: 1.25;
+  }
+  .signup .text h3 em {
+    color: var(--wine-bright);
+    font-style: italic;
+  }
+  .signup .text p {
+    font-size: 9.5pt;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .signup .text .accent {
+    color: var(--wine-deep);
+    font-weight: bold;
+    letter-spacing: 0.5pt;
+  }
+  .signup .qr {
+    width: 28mm;
+    height: 28mm;
+    background: var(--cream-warm);
+    border: 1.5pt dashed var(--gold-deep);
+    border-radius: 3pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 7.5pt;
+    color: var(--text-muted);
+    line-height: 1.35;
+    padding: 3mm;
+    font-style: italic;
+  }
+
+  /* === STALL-COBRANDING === */
+  .cobranding {
+    margin: 0 18mm 5mm;
+    padding: 5mm 7mm;
+    background: rgba(250,247,240,0.05);
+    border-left: 3pt solid var(--gold);
+    border-radius: 2pt;
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+  .cobranding .label {
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 1.5pt;
+    font-size: 8.5pt;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 2mm;
+  }
+  .cobranding .stallname {
+    color: var(--cream);
+    font-size: 13pt;
+    border-bottom: 1pt dashed var(--gold-soft);
+    padding-bottom: 1mm;
+    display: inline-block;
+    min-width: 100mm;
+    font-style: italic;
+  }
+  .cobranding .stallname.filled {
+    border-bottom: 1pt solid var(--gold);
+    color: var(--gold-bright);
+    font-style: normal;
+  }
+
+  /* === FOOTER === */
+  .footer {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 6mm 18mm 7mm;
+    border-top: 1px solid rgba(212,184,124,0.30);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8mm;
+    font-size: 9.5pt;
+    color: rgba(250,247,240,0.75);
+  }
+  .footer .left {
+    line-height: 1.55;
+    font-size: 8.5pt;
+  }
+  .footer .left .brand {
+    color: var(--gold-bright);
+    font-weight: bold;
+    letter-spacing: 0.5pt;
+    font-size: 9.5pt;
+  }
+  .footer .right {
+    text-align: right;
+    line-height: 1.55;
+    font-size: 9.5pt;
+  }
+  .footer .right .url {
+    color: var(--gold-bright);
+    font-weight: bold;
+    font-size: 11pt;
+    letter-spacing: 0.5pt;
+  }
+
+  /* === PRINT === */
   @media print {
     @page {
       size: A4 portrait;
@@ -458,15 +358,11 @@
     .page {
       margin: 0;
       box-shadow: none;
-      page-break-after: always;
-      width: 210mm;
-      height: 297mm;
+      page-break-after: auto;
     }
-    .page:last-child { page-break-after: auto; }
     .no-print { display: none !important; }
   }
 
-  /* Bildschirm-Hinweis */
   .screen-hint {
     text-align: center;
     padding: 14mm 0 6mm;
@@ -483,179 +379,94 @@
 <body>
 
 <div class="screen-hint no-print">
-  <strong>Flyer · 2 Seiten A4</strong> — über den Browser drucken (Strg + P) oder als PDF speichern.<br>
+  <strong>Stall-Aushang · 1 Seite A4</strong> — über den Browser drucken (Strg + P) oder als PDF speichern.<br>
   Im Druck-Dialog: <em>„Hintergrundgrafiken drucken"</em> aktivieren damit Farben mitkommen.
 </div>
 
-<!-- ============ SEITE 1 ============ -->
-<div class="page page-1">
+<!-- ============ AUSHANG ============ -->
+<div class="page">
 
-  <div class="header-1">
+  <div class="header">
     <img src="https://natuerlichabgesichert.de/wp-content/uploads/2022/04/Logo-5.svg"
          alt="Natürlich Abgesichert"
          class="logo">
-    <div class="tag">
-      Natürlich Abgesichert<br>
-      Spezialist für Tierversicherung
+    <div class="right-tag">
+      <span class="micro">Salon im Stall</span>
     </div>
   </div>
 
-  <div class="hero-1">
-    <span class="pill">Exklusiv · Pensionsbetriebe &amp; Haltergemeinschaften</span>
-
-    <h1>Damit eine Klinikrechnung <em>nicht zur Stallkrise wird.</em></h1>
-
-    <p class="lead">
-      Fünfstellige Klinikrechnungen sind in deutschen Pferdekliniken 2026 die Regel — und
-      Eure Einsteller sind oft schlecht versichert. Wir kommen <strong>virtuell zu Euch in den Stall</strong>,
-      klären sie auf, ohne dass Ihr selbst Versicherungsmakler werden müsst.
+  <div class="core">
+    <span class="eyebrow">Liebe Pferdebesitzer</span>
+    <h1>
+      Klinikrechnung über 8 000 € —
+      <em>was zahlt Eure Versicherung wirklich?</em>
+    </h1>
+    <p class="sub">
+      Bauchhöhlen-OP, Augen-OP, Sehnen-OP — eine fünfstellige Klinikrechnung kann jedes Pferd treffen.
+      Unser <strong>Salon-Abend bei Euch im Stall</strong> klärt in 90 Minuten, was Euer aktueller
+      Vertrag wirklich kann — und wo es teuer wird.
     </p>
   </div>
 
-  <div class="meta-strip">
+  <div class="reasons">
     <div class="item">
-      <span class="label">Format</span>
-      <span class="val">Online · Zoom-Salon</span>
-    </div>
-    <div class="item">
-      <span class="label">Dauer</span>
-      <span class="val">90 Minuten · Dialog</span>
+      <div class="icon">I</div>
+      <h3>Klinikrechnung 2026 ist fünfstellig</h3>
+      <p>GOT-Reform 2022 plus Material- und Medikamenten-Inflation: jede OP heute 30–60 % teurer als 2019.</p>
     </div>
     <div class="item">
-      <span class="label">Kosten</span>
-      <span class="val">Keine — für alle Beteiligten</span>
+      <div class="icon">II</div>
+      <h3>Das Kleingedruckte</h3>
+      <p>Welche Eingriffe sind heimlich ausgeschlossen? Welche Wartezeiten greifen — wenn's drauf ankommt?</p>
+    </div>
+    <div class="item">
+      <div class="icon">III</div>
+      <h3>Auch Euer eigener Schutz</h3>
+      <p>Reiter-Unfall, Rechtsschutz, Berufsunfähigkeit — einzeln nötig oder smarter im Bündel?</p>
     </div>
   </div>
 
-  <div class="three-bullets">
-    <div class="row">
-      <div class="num">I</div>
-      <div class="text">
-        <strong>Klinikrechnung heute fünfstellig</strong>
-        GOT-Reform 2022 plus Material- und Medikamenten-Inflation:
-        jede OP kostet 30–60 % mehr als vor 4 Jahren. Verträge von 2019 zahlen heute drauf.
-      </div>
-    </div>
-    <div class="row">
-      <div class="num">II</div>
-      <div class="text">
-        <strong>Das Kleingedruckte und seine Tücken</strong>
-        Welche Eingriffe sind heimlich ausgeschlossen?
-        Welche Wartezeiten greifen — wenn's drauf ankommt?
-      </div>
-    </div>
-    <div class="row">
-      <div class="num">III</div>
-      <div class="text">
-        <strong>Und der eigene Schutz?</strong>
-        Reiter-Unfall, Rechtsschutz, Berufsunfähigkeit —
-        einzeln nötig oder gibt es smartere Bündel-Lösungen?
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-1">
-    <div class="qr-hint">
-      Mehr Infos &amp; Anfrage online auf der Stall-Seite →
-    </div>
-    <div class="cta-block">
-      <div class="url">tierischabgesichert.de</div>
-      <div class="phone">WhatsApp: +49 152 23937130</div>
-    </div>
-  </div>
-
-</div>
-
-<!-- ============ SEITE 2 ============ -->
-<div class="page page-2">
-
-  <div class="header-2">
-    <div>
-      <div class="eyebrow">So einfach läuft das ab</div>
-      <h2>Vom ersten Kontakt bis zum <em>fertigen Salon-Abend.</em></h2>
-    </div>
-    <img src="https://natuerlichabgesichert.de/wp-content/uploads/2022/04/Logo-5.svg"
-         alt="Natürlich Abgesichert"
-         style="height: 14mm; width: auto; opacity: 0.85;">
-  </div>
-
-  <div class="steps">
-    <div class="step">
-      <div class="n">1</div>
-      <h3>Anfrage</h3>
-      <p>Kurze Anfrage über das Formular online — mit Stallname und Einsteller-Anzahl.</p>
-    </div>
-    <div class="step">
-      <div class="n">2</div>
-      <h3>Bedarfsgespräch</h3>
-      <p>15-Min-Telefonat: Termin, Format, ob Co-Branding gewünscht.</p>
-    </div>
-    <div class="step">
-      <div class="n">3</div>
-      <h3>Einladung</h3>
-      <p>Fertige Einladungs-Mail + Aushang-PDF — Ihr leitet weiter an Eure Einsteller.</p>
-    </div>
-    <div class="step">
-      <div class="n">4</div>
-      <h3>Salon-Abend</h3>
-      <p>Wir führen den 90-Minuten-Salon durch. Ihr seid dabei oder nicht — wie Ihr möchtet.</p>
-    </div>
-  </div>
-
-  <div class="value-row">
-    <div class="card">
-      <h3>Für Eure <em>Einsteller</em></h3>
-      <p>Top-Beratung von Menschen, die selbst Pferdebesitzer sind, gezüchtet haben und jahrelang in Pensionsställen und Pferdekliniken gearbeitet haben.</p>
-      <p><strong>Klarheit im Versicherungsdschungel</strong> — und eine Absicherung, die hält, was sie verspricht.</p>
-    </div>
-    <div class="card">
-      <h3>Für Euren <em>Stall</em></h3>
-      <p><strong>Goodwill bei Euren Einstellern</strong> — Ihr seid der Ort, an dem solche Themen ernst genommen werden.</p>
-      <p>Plus: für jeden Vertrag nach dem Salon fließt automatisch <strong>Empfehlungsprovision</strong> an Euch.</p>
-    </div>
-  </div>
-
-  <div class="provision">
+  <div class="event">
     <div class="left">
-      <div class="label">Eure Vergütung</div>
-      <h3>Provision — <em>automatisch.</em> Ohne Listen.</h3>
+      <h2>Salon-Abend <em>in unserem Stall.</em><br>Online · 90 Minuten · im Dialog.</h2>
     </div>
-    <div class="right">25–65 € pro Vertrag</div>
+    <div class="details">
+      <dl>
+        <dt>Datum</dt><dd><span class="placeholder">tt . mm . jjjj</span></dd>
+        <dt>Uhrzeit</dt><dd><span class="placeholder">__ : __ Uhr</span></dd>
+        <dt>Format</dt><dd>Zoom — von zuhause oder gemeinsam im Stall</dd>
+        <dt>Kosten</dt><dd>Keine — für alle Beteiligten</dd>
+      </dl>
+    </div>
   </div>
 
-  <div class="otto-section">
-    <div class="portrait"></div>
+  <div class="signup">
     <div class="text">
-      <h3>Otto Boldt <em>und Team</em></h3>
-      <p>Wir sind selbst Pferde- und Tierbesitzer, haben gezüchtet und jahrelang in
-      Pensionsställen und Pferdekliniken gearbeitet. <strong>Praxis-Wissen aus dem
-      Stallalltag</strong> — nicht aus dem Lehrbuch.</p>
+      <h3>Jetzt <em>anmelden</em> — Platz reservieren</h3>
+      <p>
+        <span class="accent">QR-Code scannen</span> oder beim Stall melden.
+        Ein offener Dialog, keine Verkaufsveranstaltung.
+        Wer mag, lässt nach dem Abend einen kostenfreien Vertragscheck machen — niemand muss.
+      </p>
+    </div>
+    <div class="qr">
+      QR-Code hier<br>einkleben<br>→ Anmelde-Seite
     </div>
   </div>
 
-  <div class="footer-2">
-    <div class="col">
-      <h4>Natürlich Abgesichert</h4>
-      <div class="line"><span class="highlight">Inhaber:</span> Otto Boldt</div>
-      <div class="line"><span class="highlight">Sitz:</span> Richard-Wagner-Str. 1 · 04109 Leipzig</div>
-      <div class="line"><span class="highlight">Status:</span> Versicherungsvermittler</div>
+  <div class="cobranding">
+    <span class="label">Euer Stall</span>
+    <span class="stallname">— hier Stallname eintragen —</span>
+  </div>
+
+  <div class="footer">
+    <div class="left">
+      <span class="brand">Natürlich Abgesichert</span><br>
+      Spezialist für Tierversicherung · Inhaber Otto Boldt · Leipzig
     </div>
-    <div class="col">
-      <h4>Kontakt</h4>
-      <div class="line">tierischabgesichert.de</div>
-      <div class="line">Info@tierischabgesichert.de</div>
-      <div class="line">+49 152 23937130</div>
-    </div>
-    <div class="col">
-      <h4>Salon anfragen</h4>
-      <div class="line">WhatsApp: wa.me/4915223937130</div>
-      <div class="line">Online: tierischabgesichert.de</div>
-      <div class="line">Reg.-Nr.: D-L5WZ-XHTN0-22</div>
-    </div>
-    <div class="compliance">
-      Sachlich, persönlich, ehrlich. Veranstaltet von Natürlich Abgesichert — Inhaber Otto Boldt,
-      Versicherungsvermittler aus Leipzig. Erstinformation gemäß §15 VersVermV auf Anfrage.
-      © 2026 — Eingetragen im Vermittlerregister · IHK Leipzig.
+    <div class="right">
+      <div class="url">tierischabgesichert.de</div>
+      WhatsApp: +49 152 23937130
     </div>
   </div>
 
