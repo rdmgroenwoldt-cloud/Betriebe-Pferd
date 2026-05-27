@@ -33,16 +33,21 @@
   /* A4 hochkant: 210mm × 297mm — funktioniert auch hochskaliert auf A3 */
   .page {
     width: 210mm;
-    min-height: 297mm;
+    height: 297mm;
     background:
-      radial-gradient(ellipse at top right, rgba(201,161,78,0.10) 0%, transparent 55%),
-      radial-gradient(ellipse at bottom left, rgba(110,21,46,0.50) 0%, transparent 50%),
-      linear-gradient(160deg, var(--royal-deep) 0%, var(--wine-deep) 65%, var(--royal-mid) 100%);
+      linear-gradient(160deg, rgba(15,17,50,0.88) 0%, rgba(74,14,31,0.78) 55%, rgba(30,33,83,0.85) 100%),
+      url('https://natuerlichabgesichert.de/wp-content/uploads/2025/10/pferd-mit-frauen-1536x1229.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     margin: 12mm auto;
     box-shadow: 0 4px 24px rgba(0,0,0,0.18);
     position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
   .page::before {
     content: '';
@@ -63,14 +68,14 @@
 
   /* === HEADER === */
   .header {
-    padding: 10mm 18mm 3mm;
+    padding: 8mm 18mm 2mm;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10mm;
   }
   .header .logo {
-    height: 13mm;
+    height: 12mm;
     width: auto;
     filter: brightness(0) invert(1);
     opacity: 0.95;
@@ -90,15 +95,15 @@
 
   /* === AUFSCHLAG === */
   .hero {
-    padding: 5mm 18mm 3mm;
+    padding: 3mm 18mm 2mm;
   }
   .hero .eyebrow {
     color: var(--gold-soft);
     text-transform: uppercase;
-    letter-spacing: 3.5pt;
-    font-size: 9.5pt;
+    letter-spacing: 3pt;
+    font-size: 9pt;
     font-weight: bold;
-    margin-bottom: 3.5mm;
+    margin-bottom: 2.5mm;
     display: block;
   }
   .hero .eyebrow::before {
@@ -106,11 +111,11 @@
     color: var(--gold);
   }
   .hero h1 {
-    font-size: 22pt;
+    font-size: 20pt;
     line-height: 1.1;
     font-weight: normal;
     letter-spacing: -0.3pt;
-    margin-bottom: 3.5mm;
+    margin-bottom: 2.5mm;
     color: var(--cream);
   }
   .hero h1 em {
@@ -118,9 +123,9 @@
     font-style: italic;
   }
   .hero .lead {
-    font-size: 11pt;
-    line-height: 1.5;
-    color: rgba(250,247,240,0.92);
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: rgba(250,247,240,0.94);
     max-width: 170mm;
   }
   .hero .lead strong {
@@ -130,11 +135,12 @@
 
   /* === WORÜBER REDEN WIR === */
   .topics {
-    margin: 5mm 18mm 4mm;
-    padding: 5mm 7mm;
-    background: rgba(250,247,240,0.05);
-    border: 1px solid rgba(212,184,124,0.30);
+    margin: 3mm 18mm 3mm;
+    padding: 4mm 7mm;
+    background: rgba(15,17,50,0.55);
+    border: 1px solid rgba(212,184,124,0.35);
     border-radius: 3pt;
+    backdrop-filter: blur(3px);
   }
   .topics .label {
     color: var(--gold-soft);
@@ -142,7 +148,7 @@
     letter-spacing: 2.5pt;
     font-size: 8.5pt;
     font-weight: bold;
-    margin-bottom: 3mm;
+    margin-bottom: 2.5mm;
     display: block;
   }
   .topics ul {
@@ -172,7 +178,7 @@
     margin-top: 0.5mm;
   }
   .topics li .txt {
-    font-size: 10pt;
+    font-size: 9.5pt;
     color: var(--cream);
   }
   .topics li .txt strong {
@@ -185,12 +191,12 @@
   /* === KOSTENFREI-BAND === */
   .free-strip {
     margin: 0 18mm 3mm;
-    padding: 3.5mm 7mm;
-    background: linear-gradient(135deg, rgba(201,161,78,0.18) 0%, rgba(110,21,46,0.30) 100%);
+    padding: 3mm 7mm;
+    background: linear-gradient(135deg, rgba(201,161,78,0.30) 0%, rgba(15,17,50,0.55) 100%);
     border-left: 3pt solid var(--gold);
     border-radius: 2pt;
     font-size: 9.5pt;
-    line-height: 1.5;
+    line-height: 1.45;
     color: var(--cream);
   }
   .free-strip strong {
@@ -201,17 +207,17 @@
   /* === WER WIR SIND === */
   .about {
     margin: 0 18mm 3mm;
-    padding: 3.5mm 7mm;
-    background: rgba(250,247,240,0.04);
+    padding: 3mm 7mm;
+    background: rgba(15,17,50,0.45);
     border-radius: 3pt;
-    border: 1px solid rgba(212,184,124,0.20);
+    border: 1px solid rgba(212,184,124,0.25);
     display: grid;
-    grid-template-columns: 15mm 1fr;
+    grid-template-columns: 14mm 1fr;
     gap: 5mm;
     align-items: center;
   }
   .about .portrait {
-    width: 15mm; height: 15mm;
+    width: 14mm; height: 14mm;
     border-radius: 50%;
     background-image: url('https://natuerlichabgesichert.de/wp-content/uploads/2025/10/pferd-mit-frauen-300x240.jpg');
     background-size: cover;
@@ -219,19 +225,19 @@
     border: 1.5pt solid var(--gold-soft);
   }
   .about .text h3 {
-    font-size: 11pt;
+    font-size: 10.5pt;
     color: var(--gold-bright);
     font-weight: normal;
-    margin-bottom: 1mm;
+    margin-bottom: 0.5mm;
   }
   .about .text h3 em {
     color: var(--gold-soft);
     font-style: italic;
   }
   .about .text p {
-    font-size: 9.5pt;
-    color: rgba(250,247,240,0.88);
-    line-height: 1.45;
+    font-size: 9pt;
+    color: rgba(250,247,240,0.92);
+    line-height: 1.4;
   }
   .about .text p strong {
     color: var(--cream);
@@ -241,7 +247,7 @@
   /* === CTA / ANMELDEN — 2 QR-CODES === */
   .cta {
     margin: 0 18mm 3mm;
-    padding: 4mm 7mm 3mm;
+    padding: 4mm 7mm 4mm;
     background: var(--ivory);
     border-radius: 3pt;
     color: var(--text-dark);
@@ -250,7 +256,7 @@
     font-size: 11.5pt;
     color: var(--royal-deep);
     font-weight: normal;
-    margin-bottom: 2.5mm;
+    margin-bottom: 3mm;
     line-height: 1.2;
     text-align: center;
   }
@@ -365,9 +371,31 @@
 
   /* === PRINT === */
   @media print {
-    @page { size: A4 portrait; margin: 0; }
-    html, body { background: white; }
-    .page { margin: 0; box-shadow: none; }
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    html, body {
+      background: white;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    *, *::before, *::after {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    .page {
+      margin: 0 !important;
+      box-shadow: none !important;
+      height: 297mm !important;
+      min-height: 297mm !important;
+      max-height: 297mm !important;
+      overflow: hidden !important;
+      page-break-after: avoid !important;
+      page-break-inside: avoid !important;
+    }
     .no-print { display: none !important; }
   }
 
