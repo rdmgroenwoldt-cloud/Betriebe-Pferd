@@ -42,6 +42,8 @@
     box-shadow: 0 4px 24px rgba(0,0,0,0.18);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
   .page::before {
     content: '';
@@ -319,8 +321,7 @@
 
   /* === FOOTER === */
   .footer {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
+    margin-top: auto;
     padding: 4mm 18mm 6mm;
     border-top: 1px solid rgba(212,184,124,0.25);
     display: flex;
