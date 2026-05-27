@@ -1828,6 +1828,189 @@
     max-width: 100%;
   }
 
+  /* =====================================================
+     ROYAL-STAGE OVERRIDE — Bühne royal, Cards beige, Hover wein
+     ===================================================== */
+  body {
+    background: var(--royal-deep);
+    color: var(--cream);
+  }
+  section,
+  section.cream,
+  section.wine {
+    background: var(--royal-deep);
+    color: var(--cream);
+  }
+  section:nth-of-type(even) {
+    background: linear-gradient(180deg, var(--royal-deep) 0%, var(--royal-mid) 100%);
+  }
+  section h2 { color: var(--cream); }
+  section h2 em { color: var(--gold-bright); font-style: italic; }
+  section .section-eyebrow { color: var(--gold-bright); }
+  section .section-eyebrow::before,
+  section .section-eyebrow::after { background: var(--gold-bright); }
+  section .lead { color: rgba(248, 244, 236, 0.88); }
+  section .divider { background: var(--gold); }
+  section p { color: rgba(248, 244, 236, 0.85); }
+  section ul li,
+  section ol li { color: rgba(248, 244, 236, 0.88); }
+
+  .value-card,
+  .teaser,
+  .flex-option,
+  .step,
+  .kit-item,
+  .beratung-card,
+  .faq-item,
+  .empfehlung-card,
+  .compliance-card,
+  .showcase-card,
+  .versicherung-card {
+    background: var(--cream) !important;
+    color: var(--text-dark) !important;
+    border: 1px solid var(--line);
+    transition: background 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                color 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .value-card h3,
+  .teaser h3,
+  .flex-option h3,
+  .step h3,
+  .kit-item h3,
+  .beratung-card h3,
+  .faq-item h3,
+  .empfehlung-card h3,
+  .showcase-card h3,
+  .versicherung-card h3 {
+    color: var(--royal-deep);
+  }
+  .value-card p,
+  .teaser p,
+  .flex-option p,
+  .step p,
+  .kit-item p,
+  .beratung-card p,
+  .faq-item p,
+  .showcase-card p,
+  .versicherung-card p {
+    color: var(--text-dark);
+  }
+  .value-card ul li,
+  .teaser ul li,
+  .flex-option ul li,
+  .step ul li,
+  .kit-item ul li,
+  .versicherung-card ul li {
+    color: var(--text-dark);
+  }
+  .value-card strong,
+  .teaser strong,
+  .flex-option strong,
+  .step strong,
+  .kit-item strong,
+  .showcase-card strong,
+  .versicherung-card strong {
+    color: var(--wine);
+  }
+
+  .value-card:hover,
+  .teaser:hover,
+  .flex-option:hover,
+  .step:hover,
+  .kit-item:hover,
+  .beratung-card:hover,
+  .empfehlung-card:hover,
+  .showcase-card:hover,
+  .versicherung-card:hover {
+    background: linear-gradient(135deg, var(--wine-deep) 0%, var(--wine) 60%, var(--wine-bright) 100%) !important;
+    color: var(--cream) !important;
+    border-color: var(--gold-bright);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 44px rgba(90, 17, 36, 0.5);
+  }
+  .value-card:hover h3,
+  .teaser:hover h3,
+  .flex-option:hover h3,
+  .step:hover h3,
+  .kit-item:hover h3,
+  .beratung-card:hover h3,
+  .empfehlung-card:hover h3,
+  .showcase-card:hover h3,
+  .versicherung-card:hover h3 {
+    color: var(--gold-bright);
+  }
+  .value-card:hover p,
+  .teaser:hover p,
+  .flex-option:hover p,
+  .step:hover p,
+  .kit-item:hover p,
+  .beratung-card:hover p,
+  .showcase-card:hover p,
+  .versicherung-card:hover p {
+    color: rgba(248, 244, 236, 0.92);
+  }
+  .value-card:hover ul li,
+  .teaser:hover ul li,
+  .flex-option:hover ul li,
+  .step:hover ul li,
+  .kit-item:hover ul li,
+  .versicherung-card:hover ul li {
+    color: rgba(248, 244, 236, 0.92);
+  }
+  .value-card:hover strong,
+  .teaser:hover strong,
+  .flex-option:hover strong,
+  .step:hover strong,
+  .kit-item:hover strong,
+  .showcase-card:hover strong,
+  .versicherung-card:hover strong {
+    color: var(--gold-bright);
+  }
+  .value-card:hover .step-num,
+  .step:hover .step-num {
+    color: var(--gold-bright);
+  }
+
+  .form-card {
+    background: var(--cream);
+    color: var(--text-dark);
+    border: 1px solid var(--line);
+  }
+  .form-card label { color: var(--royal-deep); }
+  .form-card input,
+  .form-card textarea,
+  .form-card select {
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    color: var(--text-dark);
+  }
+  .form-card input:focus,
+  .form-card textarea:focus,
+  .form-card select:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.25);
+  }
+
+  footer { background: var(--royal-deep); }
+
+  .teaser-grid,
+  .kit-grid,
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 768px) {
+    .teaser-grid,
+    .kit-grid,
+    .grid-4 {
+      grid-template-columns: 1fr;
+    }
+  }
+
 </style>
 </head>
 <body>
