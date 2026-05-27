@@ -18,11 +18,11 @@
     --gold: #C9A961;
     --gold-soft: #D9BD7A;
     --gold-bright: #E8D294;
-    --cream: #F8F4EC;
-    --cream-warm: #F0E8D6;
+    --cream: #F0E7D2;
+    --cream-warm: #E8DCC4;
     --text-dark: #1A1A2E;
     --text-muted: #5C5C6E;
-    --line: #DDD2BC;
+    --line: #C5B594;
     --wine-deep: #5A1124;
     --wine: #7A1A30;
     --wine-bright: #9A2440;
@@ -297,6 +297,18 @@
   section.cream {
     background: var(--cream-warm);
   }
+
+  section.wine {
+    background: linear-gradient(135deg, var(--wine-deep) 0%, var(--wine) 100%);
+    color: var(--cream);
+  }
+  section.wine .section-eyebrow { color: var(--gold-bright); }
+  section.wine .section-eyebrow::before { background: var(--gold-bright); }
+  section.wine h2 { color: var(--cream); }
+  section.wine h2 em { color: var(--gold-bright); }
+  section.wine .lead { color: rgba(248, 244, 236, 0.88); }
+  section.wine .divider { background: var(--gold); }
+  section.wine .value-card { background: var(--cream); }
 
   .section-eyebrow {
     display: inline-flex;
@@ -1823,7 +1835,7 @@
 </section>
 
 <!-- ====== AUCH FÜR EUCH ALS BETRIEB ====== -->
-<section class="reveal">
+<section class="wine reveal">
   <div class="container">
     <div class="section-eyebrow">Auch für Euch als Betrieb</div>
     <h2>Was Pensionsbetriebe & Haltergemeinschaften <em>selbst brauchen.</em></h2>
