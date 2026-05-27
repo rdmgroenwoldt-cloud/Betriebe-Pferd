@@ -1829,31 +1829,48 @@
   }
 
   /* =====================================================
-     ROYAL-STAGE OVERRIDE — Bühne royal, Cards beige, Hover wein
+     SHELTER-STYLE OVERRIDE — warm, ruhig, würdig
+     Inspiration: Tierheim-Landingpages (Best Friends / ASPCA / RSPCA-Stil)
      ===================================================== */
   body {
-    background: var(--royal-deep);
-    color: var(--cream);
+    background: #F8F1E4 !important;
+    color: #2A2823;
   }
-  section,
-  section.cream,
-  section.wine {
-    background: var(--royal-deep);
-    color: var(--cream);
+  section {
+    background: #F8F1E4;
+    color: #2A2823;
+    padding: 96px 0;
   }
-  section:nth-of-type(even) {
-    background: linear-gradient(180deg, var(--royal-deep) 0%, var(--royal-mid) 100%);
+  section:nth-of-type(even) { background: #FFFDF8; }
+  section.wine { background: linear-gradient(180deg, #FAEDE2 0%, #F4DDCD 100%); }
+  section.cream { background: #FFFDF8; }
+
+  section h2 {
+    color: var(--royal-deep);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
   }
-  section h2 { color: var(--cream); }
-  section h2 em { color: var(--gold-bright); font-style: italic; }
-  section .section-eyebrow { color: var(--gold-bright); }
+  section h2 em { color: var(--wine); font-style: italic; }
+  section .section-eyebrow {
+    color: var(--wine);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 12px;
+    font-weight: 700;
+  }
   section .section-eyebrow::before,
-  section .section-eyebrow::after { background: var(--gold-bright); }
-  section .lead { color: rgba(248, 244, 236, 0.88); }
-  section .divider { background: var(--gold); }
-  section p { color: rgba(248, 244, 236, 0.85); }
+  section .section-eyebrow::after { background: var(--gold); }
+  section .lead {
+    color: #5C5950;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  section .divider { width: 64px; height: 2px; background: var(--gold); margin: 24px auto; }
+  section p { color: #4A4940; }
   section ul li,
-  section ol li { color: rgba(248, 244, 236, 0.88); }
+  section ol li { color: #4A4940; }
 
   .value-card,
   .teaser,
@@ -1867,14 +1884,15 @@
   .showcase-card,
   .risk-card,
   .sparten-card {
-    background: var(--cream) !important;
-    color: var(--text-dark) !important;
-    border: 1px solid var(--line);
-    transition: background 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-                color 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #FFFFFF !important;
+    color: #2A2823 !important;
+    border: 1px solid #EDE3D2 !important;
+    border-radius: 20px !important;
+    padding: 36px 32px;
+    box-shadow: 0 6px 24px rgba(74, 73, 64, 0.06);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .value-card h3,
   .teaser h3,
@@ -1888,6 +1906,8 @@
   .risk-card h3,
   .sparten-card h3 {
     color: var(--royal-deep);
+    font-weight: 400;
+    margin-bottom: 12px;
   }
   .value-card p,
   .teaser p,
@@ -1899,7 +1919,8 @@
   .showcase-card p,
   .risk-card p,
   .sparten-card p {
-    color: var(--text-dark);
+    color: #4A4940;
+    line-height: 1.75;
   }
   .value-card ul li,
   .teaser ul li,
@@ -1908,7 +1929,7 @@
   .kit-item ul li,
   .risk-card ul li,
   .sparten-card ul li {
-    color: var(--text-dark);
+    color: #4A4940;
   }
   .value-card strong,
   .teaser strong,
@@ -1919,8 +1940,10 @@
   .risk-card strong,
   .sparten-card strong {
     color: var(--wine);
+    font-weight: 600;
   }
 
+  /* HOVER — sanftes Anheben + Gold-Border */
   .value-card:hover,
   .teaser:hover,
   .flex-option:hover,
@@ -1931,96 +1954,81 @@
   .showcase-card:hover,
   .risk-card:hover,
   .sparten-card:hover {
-    background: linear-gradient(135deg, #0E1138 0%, var(--royal-deep) 55%, var(--royal-mid) 100%) !important;
-    color: var(--cream) !important;
-    border-color: var(--wine-bright);
-    border-width: 1px;
-    border-left: 4px solid var(--wine);
-    transform: translateY(-6px);
-    box-shadow: 0 22px 52px rgba(14, 17, 56, 0.55), 0 0 0 1px rgba(154, 36, 64, 0.18);
+    transform: translateY(-4px);
+    box-shadow: 0 22px 52px rgba(26, 29, 77, 0.14);
+    border-color: var(--gold) !important;
   }
-  .value-card:hover h3,
-  .teaser:hover h3,
-  .flex-option:hover h3,
-  .step:hover h3,
-  .kit-item:hover h3,
-  .beratung-card:hover h3,
-  .empfehlung-card:hover h3,
-  .showcase-card:hover h3,
-  .risk-card:hover h3,
-  .sparten-card:hover h3 {
-    color: var(--gold-bright);
-  }
-  .value-card:hover p,
-  .teaser:hover p,
-  .flex-option:hover p,
-  .step:hover p,
-  .kit-item:hover p,
-  .beratung-card:hover p,
-  .showcase-card:hover p,
-  .risk-card:hover p,
-  .sparten-card:hover p {
-    color: rgba(248, 244, 236, 0.92);
-  }
-  .value-card:hover ul li,
-  .teaser:hover ul li,
-  .flex-option:hover ul li,
-  .step:hover ul li,
-  .kit-item:hover ul li,
-  .risk-card:hover ul li,
-  .sparten-card:hover ul li {
-    color: rgba(248, 244, 236, 0.92);
-  }
-  .value-card:hover strong,
-  .teaser:hover strong,
-  .flex-option:hover strong,
-  .step:hover strong,
-  .kit-item:hover strong,
-  .showcase-card:hover strong,
-  .risk-card:hover strong,
-  .sparten-card:hover strong {
-    color: var(--gold-bright);
-  }
-  .value-card:hover .step-num,
-  .step:hover .step-num {
-    color: var(--gold-bright);
-  }
+  .value-card .step-num,
+  .step .step-num { color: var(--royal-deep); }
 
+  /* Formular — warmer Look */
   .form-card {
-    background: var(--cream);
-    color: var(--text-dark);
-    border: 1px solid var(--line);
+    background: #FFFFFF !important;
+    color: #2A2823 !important;
+    border: 1px solid #EDE3D2 !important;
+    border-radius: 20px !important;
+    box-shadow: 0 12px 40px rgba(74, 73, 64, 0.08);
+    padding: 44px;
   }
-  .form-card label { color: var(--royal-deep); }
+  .form-card label { color: var(--royal-deep); font-weight: 600; }
   .form-card input,
   .form-card textarea,
   .form-card select {
-    background: #FFFFFF;
-    border: 1px solid var(--line);
-    color: var(--text-dark);
+    background: #FBF7F0 !important;
+    border: 1px solid #E5D9C2 !important;
+    color: #2A2823 !important;
+    border-radius: 10px !important;
+    padding: 12px 16px;
   }
   .form-card input:focus,
   .form-card textarea:focus,
   .form-card select:focus {
-    border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.25);
+    border-color: var(--gold) !important;
+    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.18) !important;
+    outline: none;
   }
 
-  footer { background: var(--royal-deep); }
+  /* Buttons / CTAs */
+  .btn,
+  .btn-primary,
+  .cta-button,
+  button[type="submit"] {
+    background: var(--royal-deep) !important;
+    color: #FFFFFF !important;
+    border-radius: 999px !important;
+    padding: 14px 32px !important;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: none;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .btn:hover,
+  .btn-primary:hover,
+  .cta-button:hover,
+  button[type="submit"]:hover {
+    background: var(--wine) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(122, 26, 48, 0.28);
+  }
+
+  footer {
+    background: var(--royal-deep);
+    color: var(--cream);
+    padding: 64px 0 32px;
+  }
 
   .teaser-grid,
   .kit-grid,
   .grid-4 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 28px;
   }
   @media (max-width: 768px) {
     .teaser-grid,
     .kit-grid,
-    .grid-4 {
-      grid-template-columns: 1fr;
-    }
+    .grid-4 { grid-template-columns: 1fr; }
+    section { padding: 64px 0; }
   }
 
 </style>
